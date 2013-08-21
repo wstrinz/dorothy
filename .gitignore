@@ -13,3 +13,4 @@ Makefile
 *.z8
 doc/
 pkg/
+.ruby-*
