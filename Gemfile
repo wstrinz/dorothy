@@ -14,7 +14,7 @@ group :development do
   gem "rdoc"
   gem "bundler"
   gem "rake"
-  #gem "jeweler"
+  gem "jeweler"
   #gem "simplecov"
 end
 
