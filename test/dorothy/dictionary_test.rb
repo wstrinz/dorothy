@@ -1,8 +1,6 @@
-require 'test/unit'
+require File.expand_path(File.basename( __FILE__) + '/../test_helper.rb')
 
-require 'dorothy'
-
-class TestDictionary < Test::Unit::TestCase
+class TestDictionary < MiniTest::Unit::TestCase
 
   F  = "#{File.dirname( __FILE__ )}/programs/read.z5"
   ZP = Z::Program[F]

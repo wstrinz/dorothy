@@ -1,9 +1,8 @@
-require 'test/unit'
+require File.expand_path(File.basename( __FILE__) + '/../test_helper.rb')
 require 'yaml'
 
-require 'dorothy'
 
-class TestPrograms < Test::Unit::TestCase
+class TestPrograms < MiniTest::Unit::TestCase
 
   PROGRAMS_DIR = "#{File.dirname( __FILE__ )}/programs"
 
