@@ -1,5 +1,4 @@
 require File.expand_path(File.basename( __FILE__) + '/../test_helper.rb')
-require 'dorothy'
 
 class TestSerialize < MiniTest::Unit::TestCase
 
@@ -35,5 +34,14 @@ class TestSerialize < MiniTest::Unit::TestCase
     assert_equal(zm2.memory,zm.memory)
   end
 
+  def test_memory
+    zm = Z::Machine.new( ZP )
+    s = Marshal.dump( zm )
+    zm2 = Marshal.load( s )
+    
+    assert_equal( zm.memory._dump_data, zm2.memory._dump_data )
+    assert_equal( zm.program.memory._dump_data, zm2.program.memory._dump_data )
+  end
+  
 end
 

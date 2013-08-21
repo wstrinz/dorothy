@@ -7,7 +7,7 @@ class TestDictionary < MiniTest::Unit::TestCase
   M = ZP.memory
 
   def test_addr
-    assert_equal( 1319, M.dictionary.addr )   # bad to hardcode!
+    assert_equal( M.header.dictionary, M.dictionary.addr )
   end
 
   def test_entry_length
