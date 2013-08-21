@@ -28,12 +28,6 @@ class TestSerialize < MiniTest::Unit::TestCase
     assert_equal( n, zm2.pc )
   end
 
-  def test_compare
-    zm = Z::Machine.new( ZP )
-    zm2 = Marshal.load( Marshal.dump( zm ) )
-    assert_equal(zm2.memory,zm.memory)
-  end
-
   def test_memory
     zm = Z::Machine.new( ZP )
     s = Marshal.dump( zm )
