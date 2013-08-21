@@ -12,7 +12,7 @@ end
 require 'rake'
 
 require 'jeweler'
-Jeweler::Tasks.new do |gem|
+jeweler_tasks = Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "dorothy"
   gem.homepage = "http://github.com/grantspeelman/dorothy"
@@ -25,6 +25,8 @@ Jeweler::Tasks.new do |gem|
   gem.extensions = FileList['ext/**/extconf.rb']
   # dependencies defined in Gemfile
 end
+$gemspec = jeweler_tasks.gemspec
+$gemspec.version = jeweler_tasks.jeweler.version
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
@@ -44,17 +46,22 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-CLEAN.include( 'ext/**/*.o', 'ext/**/*.so', 'test/**/*.z?' )
-CLOBBER.include( 'pkg', 'doc/api', 'lib/dorothy/version.rb' )
-
 ###
 ### task to compile the extension
 ###
 
-desc "compile the C extension part of the dorothy library"
-task :compile do
-  ruby = ($0 =~ /rake(.+)/) ? "ruby#{$1}" : "ruby"
-  sh %{cd ext/dorothy/machine && #{ruby} ./extconf.rb && make}
+#desc "compile the C extension part of the dorothy library"
+#task :compile do
+#  ruby = ($0 =~ /rake(.+)/) ? "ruby#{$1}" : "ruby"
+#  sh %{cd ext/dorothy/machine && #{ruby} ./extconf.rb && make}
+#end
+
+require 'rake/extensiontask'
+
+Rake::ExtensionTask.new('machine', $gemspec) do |ext|
+  ext.name = 'machine'
+  ext.ext_dir = 'ext/dorothy/machine'
+  ext.lib_dir = 'lib/dorothy/machine'
 end
 
 ###

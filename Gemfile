@@ -15,6 +15,7 @@ group :development do
   gem "bundler"
   gem "rake"
   gem "jeweler"
+  gem 'rake-compiler'
   #gem "simplecov"
 end
 
