@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 # Add dependencies required to use your gem here.
 # Example:
-# gem "gruesome"
+
 # gem "i18n", ">= 0.5.0"
 
 # Add dependencies to develop your gem here.
@@ -13,6 +13,7 @@ group :development do
   gem "minitest-reporters"
   gem "rdoc"
   gem "bundler"
+  gem "rake"
   #gem "jeweler"
   #gem "simplecov"
 end
