@@ -21,7 +21,7 @@ jeweler_tasks = Jeweler::Tasks.new do |gem|
   gem.summary = %Q{Dorothy is a z-machine interpreter library}
   gem.description = %Q{Dorothy is a z-machine interpreter library.  It's core is C (taken in part from Frotz), the interface is Ruby.  Ideally this project forms the basis for writing interpreters and other tools.}
   gem.email = "grant.speelman@ubxd.com"
-  gem.authors = ["Eric K Idema","Grant Speelman"]
+  gem.authors = ["Eric K Idema","Matt Kimmel","Grant Speelman"]
   gem.executables = ['dorothy']
   gem.extensions = FileList['ext/**/extconf.rb']
   gem.files.include('lib/dorothy/machine/machine.*')
