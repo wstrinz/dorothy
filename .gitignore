@@ -14,3 +14,6 @@ Makefile
 doc/
 pkg/
 .ruby-*
+.idea
+lib/dorothy/machine
+
