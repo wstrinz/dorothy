@@ -12,6 +12,7 @@ end
 require 'rake'
 
 require 'jeweler'
+require File.expand_path("../lib/dorothy/version", __FILE__)
 jeweler_tasks = Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "dorothy"
@@ -20,9 +21,11 @@ jeweler_tasks = Jeweler::Tasks.new do |gem|
   gem.summary = %Q{Dorothy is a z-machine interpreter library}
   gem.description = %Q{Dorothy is a z-machine interpreter library.  It's core is C (taken in part from Frotz), the interface is Ruby.  Ideally this project forms the basis for writing interpreters and other tools.}
   gem.email = "grant.speelman@ubxd.com"
-  gem.authors = ["Grant Speelman"]
+  gem.authors = ["Eric K Idema","Grant Speelman"]
   gem.executables = ['dorothy']
   gem.extensions = FileList['ext/**/extconf.rb']
+  gem.files.include('lib/dorothy/machine/machine.*')
+  gem.version = Dorothy::VERSION
   # dependencies defined in Gemfile
 end
 $gemspec = jeweler_tasks.gemspec
