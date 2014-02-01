@@ -15,5 +15,3 @@ doc/
 pkg/
 .ruby-*
 .idea
-lib/dorothy/machine
-
